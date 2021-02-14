@@ -2,7 +2,7 @@
 
   <section class="event-list">
     <div class='row'>
-      <div class='col-sm-5' v-for='event in events'>
+      <div class='col-sm-5' v-bind:key=event v-for='event in events' >
           <event :event= 'event'/>
       </div>
     </div>
@@ -13,6 +13,7 @@
 <script lang="js">
 
   import event from './Event'
+  import myevents from '../data/events'
 
   export default  {
     name: 'event-list',
@@ -25,32 +26,7 @@
     },
     data () {
       return {
-        events:[
-          {
-            id: 1,
-            naziv: "med",
-            datum: "2022-02-01",
-            lokacija: "Beograd"
-          },
-          {
-            id: 2,
-            naziv: "med2",
-            datum: "2022-02-01",
-            lokacija: "Beograd"
-          },
-          {
-            id: 3,
-            naziv: "med2",
-            datum: "2022-02-01",
-            lokacija: "Beograd"
-          }, 
-          {
-            id: 4,
-            naziv: "med2",
-            datum: "2022-02-01",
-            lokacija: "Beograd"
-          }
-        ]
+        events: myevents
       }
     },
     methods: {
@@ -64,12 +40,9 @@
 
 </script>
 
-<style scoped >
-  .event-list {
-
-  }
+<style >
   .row{
-    justify-content: center ! important;
-    margin: 0px !important;
+    justify-content: left ! important;
+    margin-left: 200px !important;
   }
 </style>

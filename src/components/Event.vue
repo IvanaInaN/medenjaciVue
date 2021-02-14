@@ -3,12 +3,11 @@
   <section class="event">
     <div class= 'card'>
       <div class= 'card-content'>
-        <img src='../../public/propolis.jpg' weight=50px height=50px/>
         <router-link :to='/eventdetails/+ event.id'>
-            <h2>{{event.naziv}}</h2>
+            <h2 class='linkStyle'>{{event.naziv}}  <img src='../../public/propolis.jpg' weight=50px height=50px/></h2> 
         </router-link>
-        <spam>{{event.datum}}</spam><br/>
-        <spam>{{event.lokacija}}</spam>
+        <spam>Cena: {{event.datum}} din</spam><br/>
+        <spam>{{event.lokacija}}</spam> 
       </div>
     </div>
   </section>
@@ -41,16 +40,17 @@
 
 </script>
 
-<style scoped >
-  .event {
-
-  }
+<style  >
   .card{
-    height: 200px;
+    height: 130px;
   }
   .card-content{
     color: white;
     background: sandybrown;
-    height: 200px;
+    height: 1500px;
+  }
+  .linkStyle{
+    color: white;
+    background: sandybrown;
   }
 </style>
